@@ -1,0 +1,26 @@
+<!-- for custom styles in each lang -->
+<h1 [ngClass]="currentLang =='en' ? 'mySyle1_En': 'mySyle1_Ar'">{{ 'heading' | translate }}</h1>
+<h1 [ngClass]="currentLang =='en' ? 'myStyle2_En': 'myStyle2_Ar'">{{ 'test' | translate }}</h1>
+
+
+<header #anyRef class="m-3 bg-dark">
+
+  <button class="m-3 btn btn-warning" routerLink="home">
+    {{ 'navbar.0' | translate }}
+  </button>
+  <button class="m-3 btn btn-warning" routerLink="products" >
+    {{ 'navbar.1' | translate }}
+  </button>
+  
+  <!-- getting lang from translate service directely -->
+  <ng-container *ngFor="let language of translate.getLangs()">
+    <button
+      class="m-3 btn btn-danger"
+      *ngIf="currentLang != language"
+      (click)="changeLang(language)"
+    >
+      {{ language }}
+    </button></ng-container
+  >
+  
+</header>

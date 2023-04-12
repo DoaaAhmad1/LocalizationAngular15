@@ -1,0 +1,10 @@
+{
+  "heading":"Hello",
+  "test":"This is for testing",
+  "navbar":["Home","Products"],
+  "products":{
+    "table":{
+      "head":["Name","Price","Quantity"]
+    }
+  }
+}
